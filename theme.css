@@ -1,18 +1,18 @@
 /**
  * @name midnight
- * @description A dark, rounded discord theme in shades of gray with a pancake emoji.
+ * @description A dark, rounded discord theme.
  * @author refact0r
  * @version 1.6.2
  * @invite nz87hXyvcy
- * @website https://github.com/SunsetRavenOff/theme2/
- * @source https://github.com/SunsetRavenOff/theme2/blob/main/theme.css
+ * @website https://github.com/refact0r/midnight-discord
+ * @source https://github.com/refact0r/midnight-discord/blob/master/midnight.theme.css
  * @authorId 508863359777505290
  * @authorLink https://www.refact0r.dev
 */
 
 /* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
 
-@import url('https://github.com/SunsetRavenOff/theme2/blob/main/theme.css');
+@import url('https://refact0r.github.io/midnight-discord/midnight.css');
 
 /* customize things here */
 :root {
@@ -23,36 +23,36 @@
 	--corner-text: 'Midnight';
 
 	/* color of status indicators and window controls */
-	--online-indicator: #ffffff; /* light gray for online */
-	--dnd-indicator: #d45d5d; /* muted red for DND */
-	--idle-indicator: #c1a634; /* muted yellow for idle */
-	--streaming-indicator: #7b3f98; /* dark purple for streaming */
+	--online-indicator: var(--accent-2); /* change to #23a55a for default green */
+	--dnd-indicator: hsl(340, 60%, 60%); /* change to #f13f43 for default red */
+	--idle-indicator: hsl(50, 60%, 60%); /* change to #f0b232 for default yellow */
+	--streaming-indicator: hsl(260, 60%, 60%); /* change to #593695 for default purple */
 
 	/* accent colors */
-	--accent-1: #6e6e6e; /* links in muted gray */
-	--accent-2: #a1a1a1; /* general unread/mention elements */
-	--accent-3: #888888; /* accent buttons */
-	--accent-4: #7f7f7f; /* accent buttons when hovered */
-	--accent-5: #666666; /* accent buttons when clicked */
-	--mention: hsla(0, 0%, 60%, 0.1); /* mentions & mention messages */
-	--mention-hover: hsla(0, 0%, 60%, 0.05); /* mentions & mention messages when hovered */
+	--accent-1: hsl(190, 70%, 60%); /* links */
+	--accent-2: hsl(190, 70%, 48%); /* general unread/mention elements */
+	--accent-3: hsl(190, 70%, 42%); /* accent buttons */
+	--accent-4: hsl(190, 70%, 36%); /* accent buttons when hovered */
+	--accent-5: hsl(190, 70%, 30%); /* accent buttons when clicked */
+	--mention: hsla(190, 80%, 52%, 0.1); /* mentions & mention messages */
+	--mention-hover: hsla(190, 80%, 52%, 0.05); /* mentions & mention messages when hovered */
 
 	/* text colors */
 	--text-0: white; /* text on colored elements */
 	--text-1: var(--text-2); /* other normally white text */
-	--text-2: #b0b0b0; /* headings and important text */
-	--text-3: #a0a0a0; /* normal text */
-	--text-4: #808080; /* icon buttons and channels */
-	--text-5: #505050; /* muted channels/chats and timestamps */
+	--text-2: hsl(220, 25%, 70%); /* headings and important text */
+	--text-3: hsl(220, 15%, 60%); /* normal text */
+	--text-4: hsl(220, 15%, 40%); /* icon buttons and channels */
+	--text-5: hsl(220, 15%, 25%); /* muted channels/chats and timestamps */
 
 	/* background and dark colors */
-	--bg-1: #4a4a4a; /* dark buttons when clicked */
-	--bg-2: #353535; /* dark buttons */
-	--bg-3: #2a2a2a; /* spacing, secondary elements */
-	--bg-4: #1f1f1f; /* main background color */
-	--hover: hsla(0, 0%, 40%, 0.1); /* channels and buttons when hovered */
-	--active: hsla(0, 0%, 40%, 0.2); /* channels and buttons when clicked or selected */
-	--message-hover: hsla(0, 0%, 0%, 0.1); /* messages when hovered */
+	--bg-1: hsl(220, 15%, 20%); /* dark buttons when clicked */
+	--bg-2: hsl(220, 15%, 16%); /* dark buttons */
+	--bg-3: hsl(220, 15%, 13%); /* spacing, secondary elements */
+	--bg-4: hsl(220, 15%, 10%); /* main background color */
+	--hover: hsla(230, 20%, 40%, 0.1); /* channels and buttons when hovered */
+	--active: hsla(220, 20%, 40%, 0.2); /* channels and buttons when clicked or selected */
+	--message-hover: hsla(220, 0%, 0%, 0.1); /* messages when hovered */
 
 	/* amount of spacing and padding */
 	--spacing: 12px;
@@ -75,24 +75,17 @@
 	/* direct messages moon icon */
 	/* change to block to show, none to hide */
 	--discord-icon: none; /* discord icon */
-	--moon-icon: none; /* Désactiver l'icône de la lune */
-	--moon-icon-size: 24px; /* Taille de l'emoji pancake */
+	--moon-icon: block; /* moon icon */
+	--moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* custom icon url */
+	--moon-icon-size: auto;
 
-	/* Position du pancake emoji */
-	--moon-icon-position: absolute;
-	--moon-icon-top: 10px;
-	--moon-icon-left: 10px;
-}
+	/* filter uncolorable elements to fit theme */
+	/* (just set to none, they're too much work to configure) */
+	--login-bg-filter: saturate(0.3) hue-rotate(-15deg) brightness(0.4); /* login background artwork */
+	--green-to-accent-3-filter: hue-rotate(56deg) saturate(1.43); /* add friend page explore icon */
+	--blurple-to-accent-3-filter: hue-rotate(304deg) saturate(0.84) brightness(1.2); /* add friend page school icon */
 
-/* Remplacer l'icône de la lune par une image d'emoji pancake */
-#app-mount .guilds-wrapper::before {
-	content: ""; /* On s'assure qu'il n'y a pas de texte */
-	background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c9/Pancake_emoji.png'); /* L'URL de l'image pancake */
-	background-size: contain;
-	background-repeat: no-repeat;
-	width: var(--moon-icon-size);
-	height: var(--moon-icon-size);
-	position: var(--moon-icon-position);
-	top: var(--moon-icon-top);
-	left: var(--moon-icon-left);
+	/* nav buttons */
+	--windows-nav: none;
+	--custom-nav: block;
 }
