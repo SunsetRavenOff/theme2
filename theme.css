@@ -4,15 +4,15 @@
  * @author refact0r
  * @version 1.6.2
  * @invite nz87hXyvcy
- * @website https://github.com/refact0r/midnight-discord
- * @source https://github.com/refact0r/midnight-discord/blob/master/midnight.theme.css
+ * @website https://github.com/SunsetRavenOff/theme2/
+ * @source https://github.com/SunsetRavenOff/theme2/blob/main/theme.css
  * @authorId 508863359777505290
  * @authorLink https://www.refact0r.dev
 */
 
-@import url('https://refact0r.github.io/midnight-discord/midnight.css');
+/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
 
-/* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */;
+@import url('https://github.com/SunsetRavenOff/theme2/blob/main/theme.css');
 
 /* customize things here */
 :root {
@@ -23,7 +23,7 @@
 	--corner-text: 'Midnight';
 
 	/* color of status indicators and window controls */
-	--online-indicator: #909090; /* light gray for online */
+	--online-indicator: #ffffff; /* light gray for online */
 	--dnd-indicator: #d45d5d; /* muted red for DND */
 	--idle-indicator: #c1a634; /* muted yellow for idle */
 	--streaming-indicator: #7b3f98; /* dark purple for streaming */
